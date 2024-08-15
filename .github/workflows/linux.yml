@@ -9,6 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Print runner info
+        run: |
+          echo "Runner OS: ${{ runner.os }}"
+          echo "Runner architecture: ${{ runner.arch }}"
       - uses: fastai/workflows/ssh@master
         with:
           ssh_key: ${{ secrets.SSH_KEY }}
